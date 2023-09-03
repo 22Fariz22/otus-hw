@@ -37,7 +37,6 @@ long int builderNForGen(int fullLen)
   return intNGen;
 }
 
-
 bool checkIfIsLucky(int fullLen, string ticket)
 {
   int leftSum = 0;
@@ -72,24 +71,22 @@ bool checkIfIsLucky(int fullLen, string ticket)
 int main()
 {
   int n;
-  cin>>n;
+  cout << "введите N: " << endl;
+  cin >> n;
   int fullLen = n * 2;
-  long int cnt =0 ;
-
+  long int cnt = 0;
 
   long int intNGen = builderNForGen(fullLen);
 
   for (int i = 0; i < intNGen; ++i)
   {
     string s = builder(i, fullLen);
-    
-    if(checkIfIsLucky(fullLen, s)==true)
+
+    if (checkIfIsLucky(fullLen, s) == true)
     {
       cnt += 1;
-      cout<<cnt<<endl;
+      cout << cnt << endl;
     }
+  }
+  cout << "cnt happy tickets: " << cnt << endl;
 }
-cout<<"cnt happy tickets: "<<cnt<<endl;
-}
-
-
